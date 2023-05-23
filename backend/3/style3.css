@@ -1,0 +1,16 @@
+body {
+  background-color: rgb(70, 219, 170);
+  margin: 0;
+}
+body form {
+  border-radius: 30px;
+  border: 2px solid black;
+  margin: 0px 0px 10px 0px;
+  padding-left: 10px;
+}
+body form h2 {
+  margin: 10px 0px 10px 30px;
+}
+.button {
+  margin-bottom: 10px;
+}

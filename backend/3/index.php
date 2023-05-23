@@ -19,7 +19,7 @@
       <br />
       <label> Год рождения: <select name="data" required> 
         <?php 
-                    for ($i = 1923; $i <= 2023; $i++) {
+                    for ($i = 2023; $i >= 1923; $i--) {
                       printf('<option value="%d">%d год</option>', $i, $i);
                     }
                     ?>

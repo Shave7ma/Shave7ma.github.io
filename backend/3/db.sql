@@ -3,8 +3,8 @@ CREATE TABLE Person (
   p_name varchar(128) NOT NULL DEFAULT '',
   mail varchar(128) NOT NULL DEFAULT '',
   year int(10) NOT NULL DEFAULT 0,
-  gender BOOLEAN NOT NULL DEFAULT 0,
-  limbs_num int(1) NOT NULL DEFAULT 4,
+  gender varchar(2) NOT NULL DEFAULT 0,
+  limbs_num varchar(2) NOT NULL DEFAULT 4,
   biography varchar(256) NOT NULL DEFAULT '',
   PRIMARY KEY (p_id)
 );

@@ -50,7 +50,7 @@
       <br />
       <label>
         Биография:
-        <textarea placeholder="Введите текст" name="textarea"></textarea>
+        <textarea placeholder="Введите текст" name="biography"></textarea>
       </label>
       <br />
       <label>

@@ -13,6 +13,7 @@ if (empty($_POST['limbs'])) {
 }
 if (empty($_POST['gender'])) {
     header("HTTP/1.1 400 Gender is not set");
+    exit();
 }
 $user = 'u54448';
 $pass = '2320838';

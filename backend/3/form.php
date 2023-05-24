@@ -1,23 +1,18 @@
 <?php
 if (empty($_POST['name'])) {
-    header("Name is not set");
-    exit();
+    header("HTTP/1.1 400 Name is not set");
 }
 if (empty($_POST['e_mail']) || !filter_var($_POST['e_mail'], FILTER_VALIDATE_EMAIL)) {
-    header("Mail is not set or is invalid");
-    exit();
+    header("HTTP/1.1 400 Mail is not set or is invalid");
 }
 if (empty($_POST['data'])) {
-    header("Year is not set");
-    exit();
+    header("HTTP/1.1 400 Year is not set");
 }
 if (empty($_POST['limbs'])) {
-    header("Limbs number is not set");
-    exit();
+    header("HTTP/1.1 400 Limbs number is not set");
 }
 if (empty($_POST['gender'])) {
-    header("Gender is not set");
-    exit();
+    header("HTTP/1.1 400 Gender is not set");
 }
 $user = 'u54448';
 $pass = '2320838';

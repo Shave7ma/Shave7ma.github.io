@@ -10,7 +10,7 @@
   <body>
     <form action="form.php" method="POST">
       <h2>Форма</h2>
-      <label> Имя: <input placeholder="Введите имя" name="name" required/> </label>
+      <label> Имя: <input placeholder="Введите имя" name="name"/> </label>
       <br />
       <label>
         E-mail:
@@ -27,15 +27,15 @@
       </label>
       <br />
       Пол:
-      <label> <input type="radio" value="m" name="gender" required/> М </label>
-      <label> <input type="radio" value="f" name="gender" required/> Ж </label>
+      <label> <input type="radio" value="m" name="gender" /> М </label>
+      <label> <input type="radio" value="f" name="gender" /> Ж </label>
       <br />
       Количество конечностей:
-      <label> <input type="radio" value="v1" name="limbs" required/> 1 </label>
-      <label> <input type="radio" value="v2" name="limbs" required/> 2 </label>
-      <label> <input type="radio" value="v3" name="limbs" required/> 3 </label>
-      <label> <input type="radio" value="v4" name="limbs" required/> 4 </label>
-      <label> <input type="radio" value="v5" name="limbs" required/> 5 </label>
+      <label> <input type="radio" value="v1" name="limbs" /> 1 </label>
+      <label> <input type="radio" value="v2" name="limbs" /> 2 </label>
+      <label> <input type="radio" value="v3" name="limbs"/> 3 </label>
+      <label> <input type="radio" value="v4" name="limbs" /> 4 </label>
+      <label> <input type="radio" value="v5" name="limbs" /> 5 </label>
       <br />
       <label>
         Сверхспособности:

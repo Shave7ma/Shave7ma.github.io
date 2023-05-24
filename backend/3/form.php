@@ -1,6 +1,6 @@
 <?php
 if (empty($_POST['name'])) {
-    header("HTTP/1.1 400 Name is not set");
+    header("Name is not set");
     exit();
 }
 if (empty($_POST['e_mail']) || !filter_var($_POST['e_mail'], FILTER_VALIDATE_EMAIL)) {

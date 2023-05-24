@@ -1,15 +1,19 @@
 <?php
 if (empty($_POST['name'])) {
     header("HTTP/1.1 400 Name is not set");
+    exit();
 }
 if (empty($_POST['e_mail']) || !filter_var($_POST['e_mail'], FILTER_VALIDATE_EMAIL)) {
     header("HTTP/1.1 400 Mail is not set or is invalid");
+    exit();
 }
 if (empty($_POST['data'])) {
     header("HTTP/1.1 400 Year is not set");
+    exit();
 }
 if (empty($_POST['limbs'])) {
     header("HTTP/1.1 400 Limbs number is not set");
+    exit();
 }
 if (empty($_POST['gender'])) {
     header("HTTP/1.1 400 Gender is not set");

@@ -27,8 +27,8 @@
       </label>
       <br />
       Пол:
-      <label> <input type="radio" value="v1" name="gender" required/> М </label>
-      <label> <input type="radio" value="v2" name="gender" required/> Ж </label>
+      <label> <input type="radio" value="m" name="gender" required/> М </label>
+      <label> <input type="radio" value="f" name="gender" required/> Ж </label>
       <br />
       Количество конечностей:
       <label> <input type="radio" value="v1" name="limbs" required/> 1 </label>

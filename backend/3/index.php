@@ -54,11 +54,11 @@
       </label>
       <br />
       <label>
-        <input type="checkbox" name="check1" />С контрактом
+        <input type="checkbox" name="check" onchange="document.getElementById('send').disabled = !this.checked;"/>С контрактом
         ознакомлен(а)
       </label>
       <br />
-      <input type="submit" class="button" value="Отправить" />
+      <input type="submit" class="button" disabled="disabled" id="send" value="Отправить" />
     </form>
   </body>
 </html>

@@ -11,7 +11,6 @@
   <?php
     if (!empty($messages)) {
       print('<div id="messages">');
-      // Выводим все сообщения.
       foreach ($messages as $message) {
           print($message);
      }
@@ -20,7 +19,7 @@
   ?>
     <form action="" method="POST">
       <h2>Форма</h2>
-      <label> Имя: <input placeholder="Введите имя" name="name" required
+      <label> Имя: <input placeholder="Введите имя" name="name"
       <?php print('value="' . $values['name'] . '"'); if ($errors['name']) print(' class="error"'); ?>>
     </label>
       <br />
@@ -40,27 +39,27 @@
       </label>
       <br />
       Пол:
-      <label> <input type="radio" value="v1" name="gender" required
+      <label> <input type="radio" value="v1" name="gender" 
       <?php if(strval($values['gender'])=="v1") print ("checked");  if ($errors['gender']) print(' class="error"');?>
       > М </label>
-      <label> <input type="radio" value="v2" name="gender" required
+      <label> <input type="radio" value="v2" name="gender"
       <?php if(strval($values['gender'])=="v2") print ("checked");  if ($errors['gender']) print(' class="error"');?>
       > Ж </label>
       <br />
       Количество конечностей:
-      <label> <input type="radio" value="v1" name="limbs" required
+      <label> <input type="radio" value="v1" name="limbs" 
       <?php if(!$values['limbs']=='' && strval($values['limbs'])=="v1") print ("checked"); if ($errors['limbs']) print(' class="error"');?>
       > 1 </label>
-      <label> <input type="radio" value="v2" name="limbs" required
+      <label> <input type="radio" value="v2" name="limbs"
       <?php if(!$values['limbs']=='' && strval($values['limbs'])=="v2") print ("checked"); if ($errors['limbs']) print(' class="error"');?>
       > 2 </label>
-      <label> <input type="radio" value="v3" name="limbs" required
+      <label> <input type="radio" value="v3" name="limbs"
       <?php if(!$values['limbs']=='' && strval($values['limbs'])=="v3") print ("checked"); if ($errors['limbs']) print(' class="error"');?>
       > 3 </label>
-      <label> <input type="radio" value="v4" name="limbs" required
+      <label> <input type="radio" value="v4" name="limbs"
       <?php if(!$values['limbs']=='' && strval($values['limbs'])=="v4") print ("checked"); if ($errors['limbs']) print(' class="error"');?>
       > 4 </label>
-      <label> <input type="radio" value="v5" name="limbs" required
+      <label> <input type="radio" value="v5" name="limbs"
       <?php if(!$values['limbs']=='' && strval($values['limbs'])=="v5") print ("checked"); if ($errors['limbs']) print(' class="error"');?>
       > 5 </label>
       <br />

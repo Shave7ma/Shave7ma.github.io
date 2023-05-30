@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $errors = FALSE;
     if (empty($_POST['name']) || !preg_match('/^[A-Z][a-z]+$/AD', $_POST['name'])) {
         setcookie('name_error', '1', time() + 24 * 60 * 60);
-        setcookie('name_value', $_POST['name'], time() + 30 * 24 * 60 * 60);
+        //setcookie('name_value', $_POST['name'], time() + 30 * 24 * 60 * 60);
         $errors = TRUE;
     } else {
         setcookie('name_value', $_POST['name'], time() + 30 * 24 * 60 * 60);

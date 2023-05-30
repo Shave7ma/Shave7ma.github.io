@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $values['name'] = empty($_COOKIE['name_value']) ? '' : $_COOKIE['name_value'];
     $values['e_mail'] = empty($_COOKIE['e_mail_value']) ? '' : $_COOKIE['e_mail_value'];
     $values['data'] = empty($_COOKIE['data_value']) ? '' : $_COOKIE['data_value'];
-    $values['gender'] = !isset($_COOKIE['gender_value']) ? '' : $_COOKIE['gender_value']; // использую !isset т к пол может равняться 0 и empty скажет что пол не указан
+    $values['gender'] = empty($_COOKIE['gender_value']) ? '' : $_COOKIE['gender_value']; 
     $values['limbs'] = empty($_COOKIE['limbs_value']) ? '' : $_COOKIE['limbs_value'];
     $values['biography'] = empty($_COOKIE['biography_value']) ? '' : $_COOKIE['biography_value'];
     $values['check'] = !isset($_COOKIE['check_value']) ? '' : $_COOKIE['check_value'];
@@ -75,13 +75,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     } else {
         setcookie('data_value', $_POST['data'], time() + 30 * 24 * 60 * 60);
     }
-    if (!isset($_POST['gender']) || ($_POST['gender']!='0' && $_POST['gender']!='1')) {
+    if (empty($_POST['gender']) || ($_POST['gender']!="v1" && $_POST['gender']!="v2")) {
         setcookie('gender_error', '1', time() + 24 * 60 * 60);
         $errors = TRUE;
     } else {
         setcookie('gender_value', $_POST['gender'], time() + 30 * 24 * 60 * 60);
     }
-    if (!isset($_POST['limbs']) || !preg_match('/^[1234]$/AD', $_POST['limbs'])) {
+    if (empty($_POST['limbs']) || !preg_match('/^v[1234]$/AD', $_POST['limbs'])) {
         setcookie('limbs_error', '1', time() + 24 * 60 * 60);
         $errors = TRUE;
     } else {

@@ -5,13 +5,8 @@
 </head>
 <body>
 <?php
-/**
- * Задача 6. Реализовать вход администратора с использованием
- * HTTP-авторизации для просмотра и удаления результатов.
- **/
 
 function authorize() {
-    // 
     header('HTTP/1.1 401 Unanthorized');
     // realm - область безопасности (место с хранимой информацией на сервере, для доступа
     // к которой нужен соотв-й пароль)
@@ -23,7 +18,6 @@ function authorize() {
 
 // Пример HTTP-аутентификации
 // PHP хранит логин и пароль в суперглобальном массиве $_SERVER.
-// Подробнее см. стр. 26 и 99 в учебном пособии Веб-программирование и веб-сервисы.
 // Если мы не авторизованы, мы авторизуемся
 if (empty($_SERVER['PHP_AUTH_USER']) ||
     empty($_SERVER['PHP_AUTH_PW'])) {
@@ -67,23 +61,8 @@ if ($_SERVER['REQUEST_METHOD']=="GET") {
         $stmt = $db->prepare("SELECT * FROM Ability;");
         $stmtErr =  $stmt -> execute();
         $abilities = $stmt->fetchAll();
-        // для удобства запишем в $person значения способностей
-        // почему удобно:
-        // 1. в PersonAbility храним a_id, а удобнее хранить имена
-        // 2. в PersonAbility храним кортежами, а здесь будем ключ-значение, имя способности и 0/1
-        // 3. если способности нет, будет четко указано, что = 0
-        // сначала пробегаемся по всем способностям и говорим, что у человека их нет
         foreach ($abilities as $ability) {
             $person[$ability['a_name']] = 0;
-        }
-        /*
-        $person['Invincibility']=0;
-        $person['Noclip']=0;
-        $person['Levitation']=0;
-        */
-
-        // а теперь смотрим, какие способности есть у человека
-        // если она есть, даем значение 1
         foreach ($personAbilities as $personAbility) {
             foreach ($abilities as $ability) {
                 if ($ability['a_id'] == $personAbility['a_id']) {
@@ -91,19 +70,7 @@ if ($_SERVER['REQUEST_METHOD']=="GET") {
                     break;
                 }
             }
-            /*
-            switch ($personAbility['a_id']) {
-                case 1:
-                    $person['Invincibility']=1;
-                    break;
-                case 3:
-                    $person['Noclip']=1;
-                    break;
-                case 2:
-                    $person['Levitation']=1;
-                    break;
             }
-            */
         }
         // сохраняем в куки ID пользователя, которого будем изменять
         setcookie('changed_uid', $person['p_id'], time() + 30 * 24 * 60 * 60);
@@ -231,7 +198,6 @@ if ($_SERVER['REQUEST_METHOD']=="GET") {
         foreach ($resultAbility as $personAbility) {
             if ($personAbility['p_id'] == $person['p_id']){
                 switch ($personAbility['a_id']) {
-                    // мы уже показывали, что можно не делать switch
                     case 1:
                         print('Неуязвимость ');
                         break;
@@ -291,29 +257,12 @@ if ($_SERVER['REQUEST_METHOD']=="GET") {
                     break;
                 }
             }
-            /*
-            switch ($item) {
-                case "Invincibility":
-                    $stmt = $db->prepare("INSERT INTO Person_Ability (p_id, a_id) VALUES (:p_id, :a_id);");
-                    $stmtErr = $stmt->execute(['p_id' => $_POST['uid'], 'a_id' => 1]);
-                    break;
-                case "Noclip":
-                    $stmt = $db->prepare("INSERT INTO Person_Ability (p_id, a_id) VALUES (:p_id, :a_id);");
-                    $stmtErr = $stmt->execute(['p_id' => $_POST['uid'], 'a_id' => 3]);
-                    break;
-                case "Levitation":
-                    $stmt = $db->prepare("INSERT INTO Person_Ability (p_id, a_id) VALUES (:p_id, :a_id);");
-                    $stmtErr = $stmt->execute(['p_id' => $_POST['uid'], 'a_id' => 2]);
-                    break;
-            }
-            */
             if (!$stmtErr) {
                 header("HTTP/1.1 500 Some server issue");
                 exit();
             }
         }
     }
-    // теперб кука больше не нужна, удаляем
     setcookie('changed_uid', '', 1);
     header('Location: admin.php');
 }

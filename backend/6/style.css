@@ -1,0 +1,17 @@
+.error {
+    background-color: red;
+}
+.error-message {
+	color: red;
+}
+
+body {
+    background-color: rgb(70, 219, 170);
+    margin: 0;
+  }
+  body form {
+    border-radius: 30px;
+    border: 2px solid black;
+    margin: 0px 0px 10px 0px;
+    padding-left: 10px;
+  }

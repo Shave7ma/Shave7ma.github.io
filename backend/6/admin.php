@@ -29,9 +29,9 @@ if (empty($_SERVER['PHP_AUTH_USER']) ||
     empty($_SERVER['PHP_AUTH_PW'])) {
   authorize();
 }
-$user = 'u53297';
-$pass = '1541109';
-$db = new PDO('mysql:host=localhost;dbname=u53297', $user, $pass, [PDO::ATTR_PERSISTENT => true]);
+$user = 'u54448';
+$pass = '2320838';
+$db = new PDO('mysql:host=localhost;dbname=u54448', $user, $pass, [PDO::ATTR_PERSISTENT => true]);
 $stmt = $db->prepare("SELECT * FROM Admin;");
 $stmtErr = $stmt->execute();
 $admins = $stmt->fetchAll(PDO::FETCH_ASSOC);

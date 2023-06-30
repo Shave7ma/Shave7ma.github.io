@@ -224,6 +224,7 @@ else {
                 }
             }
         }
+        }
         catch(PDOException $e){
             header("HTTP/1.1 500 Some server issue");
             //print('Error : ' . $e->getMessage());

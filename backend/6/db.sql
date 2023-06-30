@@ -35,4 +35,4 @@ CREATE TABLE Admin (
     PRIMARY KEY (ad_id)
 );
 
-INSERT INTO Admin (login, pass) VALUES ('admin','2320838');
+INSERT INTO Admin (login, pass) VALUES ('admin','202cb962ac59075b964b07152d234b70');
